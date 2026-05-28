@@ -40,35 +40,69 @@ table 50132 "CSD Seminar Ledger Entry"
             Caption = 'Quantity';
         }
 
-        field(8; "Unit Price"; Decimal)
+        field(8; "Bill-to Customer No."; Code[20])
+        {
+            Caption = 'Bill-to Customer No.';
+            TableRelation = Customer;
+        }
+
+        field(9; "Charge Type"; Option)
+        {
+            Caption = 'Charge Type';
+            OptionMembers = Instructor,Room,Participant;
+        }
+
+        field(10; Chargeable; Boolean)
+        {
+            Caption = 'Chargeable';
+        }
+
+        field(11; "Participant Contact No."; Code[20])
+        {
+            Caption = 'Participant Contact No.';
+            TableRelation = Contact;
+        }
+
+        field(12; "Instructor Resource No."; Code[20])
+        {
+            Caption = 'Instructor Resource No.';
+            TableRelation = Resource;
+        }
+
+        field(13; "Room Resource No."; Code[20])
+        {
+            Caption = 'Room Resource No.';
+            TableRelation = Resource;
+        }
+
+        field(14; "Unit Price"; Decimal)
         {
             Caption = 'Unit Price';
         }
 
-        field(9; "Total Price"; Decimal)
+        field(15; "Total Price"; Decimal)
         {
             Caption = 'Total Price';
         }
 
-        field(10; "Source Code"; Code[10])
+        field(16; "Source Code"; Code[10])
         {
             Caption = 'Source Code';
         }
 
-        field(11; "Reason Code"; Code[10])
+        field(17; "Reason Code"; Code[10])
         {
             Caption = 'Reason Code';
         }
 
-        field(12; "No. Series"; Code[20])
+        field(18; "No. Series"; Code[20])
         {
             Caption = 'No. Series';
         }
 
-        field(13; "User ID"; Code[50])
+        field(19; "User ID"; Code[50])
         {
             Caption = 'User ID';
-
             TableRelation = User."User Name";
             ValidateTableRelation = false;
         }
